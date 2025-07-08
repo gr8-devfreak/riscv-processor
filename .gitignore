@@ -1,0 +1,17 @@
+*.swp
+*.swo
+*.o
+*.out
+*.elf
+*.hex
+*.asm
+*.map
+results.xml
+*.bin
+__pycache__/
+sim_build/
+build/
+*.vcd
+dsn
+SOL_*.sv
+SOL_*/
