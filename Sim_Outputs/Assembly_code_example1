@@ -1,0 +1,93 @@
+
+Disassembly of section .text:
+
+00000000 <__start>:
+   0:	008000ef          	jal	8 <pre_main>
+
+00000004 <__post_main>:
+   4:	0000006f          	j	4 <__post_main>
+
+00000008 <pre_main>:
+   8:	00001117          	auipc	sp,0x1
+   c:	ff410113          	addi	sp,sp,-12 # ffc <_USER_SP_ADDR>
+  10:	0040006f          	j	14 <_text_end>
+
+Disassembly of section .text.startup.main:
+
+00000014 <main>:
+  14:	000015b7          	lui	a1,0x1
+  18:	06400793          	li	a5,100
+  1c:	80f5a023          	sw	a5,-2048(a1) # 800 <_bss_end>
+  20:	0c800793          	li	a5,200
+  24:	80f5a223          	sw	a5,-2044(a1)
+  28:	12c00793          	li	a5,300
+  2c:	80f5a423          	sw	a5,-2040(a1)
+  30:	19000793          	li	a5,400
+  34:	80f5a623          	sw	a5,-2036(a1)
+  38:	8045a603          	lw	a2,-2044(a1)
+  3c:	8005a783          	lw	a5,-2048(a1)
+  40:	8085a683          	lw	a3,-2040(a1)
+  44:	80c5a703          	lw	a4,-2036(a1)
+  48:	00c787b3          	add	a5,a5,a2
+  4c:	00d787b3          	add	a5,a5,a3
+  50:	00e787b3          	add	a5,a5,a4
+  54:	80f5a823          	sw	a5,-2032(a1)
+  58:	8005a683          	lw	a3,-2048(a1)
+  5c:	1f400713          	li	a4,500
+  60:	81458793          	addi	a5,a1,-2028
+  64:	02d75863          	bge	a4,a3,94 <main+0x80>
+  68:	00100713          	li	a4,1
+  6c:	00e7a023          	sw	a4,0(a5)
+  70:	00001737          	lui	a4,0x1
+  74:	00000793          	li	a5,0
+  78:	81870713          	addi	a4,a4,-2024 # 818 <_bss_end+0x18>
+  7c:	00a00693          	li	a3,10
+  80:	00f72023          	sw	a5,0(a4)
+  84:	00178793          	addi	a5,a5,1
+  88:	fed79ce3          	bne	a5,a3,80 <main+0x6c>
+  8c:	00000513          	li	a0,0
+  90:	00008067          	ret
+  94:	00200713          	li	a4,2
+  98:	fd5ff06f          	j	6c <main+0x58>
+
+Disassembly of section .riscv.attributes:
+
+00000000 <.riscv.attributes>:
+   0:	3241                	.insn	2, 0x3241
+   2:	0000                	.insn	2, 0x0000
+   4:	7200                	.insn	2, 0x7200
+   6:	7369                	.insn	2, 0x7369
+   8:	01007663          	bgeu	zero,a6,14 <main>
+   c:	0028                	.insn	2, 0x0028
+   e:	0000                	.insn	2, 0x0000
+  10:	1004                	.insn	2, 0x1004
+  12:	7205                	.insn	2, 0x7205
+  14:	3376                	.insn	2, 0x3376
+  16:	6932                	.insn	2, 0x6932
+  18:	7032                	.insn	2, 0x7032
+  1a:	5f31                	.insn	2, 0x5f31
+  1c:	326d                	.insn	2, 0x326d
+  1e:	3070                	.insn	2, 0x3070
+  20:	7a5f 6369 7273      	.insn	6, 0x727363697a5f
+  26:	7032                	.insn	2, 0x7032
+  28:	5f30                	.insn	2, 0x5f30
+  2a:	6d7a                	.insn	2, 0x6d7a
+  2c:	756d                	.insn	2, 0x756d
+  2e:	316c                	.insn	2, 0x316c
+  30:	3070                	.insn	2, 0x3070
+	...
+
+Disassembly of section .comment:
+
+00000000 <.comment>:
+   0:	3a434347          	.insn	4, 0x3a434347
+   4:	2820                	.insn	2, 0x2820
+   6:	33623167          	.insn	4, 0x33623167
+   a:	3630                	.insn	2, 0x3630
+   c:	3330                	.insn	2, 0x3330
+   e:	6139                	.insn	2, 0x6139
+  10:	20293463          	.insn	4, 0x20293463
+  14:	3531                	.insn	2, 0x3531
+  16:	312e                	.insn	2, 0x312e
+  18:	302e                	.insn	2, 0x302e
+	...
